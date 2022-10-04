@@ -1,0 +1,131 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>forms can be documents numbers</p>
+
+    <form name="my">
+        <input name+"" value="1">
+        <input name+"" value="2">
+    </form>
+
+    <script>
+        //get the form
+        let form = document.forms.my;
+
+        //get the elements
+        let elem = form.element.one;
+
+        alert.elem.value; // 1
+    </script>
+
+    <form id="form">
+        <fieldset name="userfields">
+            <legend>info</legend>
+            <input name="login" type="text">
+        </fieldset>
+    </form>
+    <script>
+        alert(form.elements.login); // <input name="login">
+    
+        let fieldset = form.elements.userFields;
+        alert(fieldset); // HTMLFieldSetElement
+    
+        // we can get the input by name both from the form and from the fieldset
+        alert(fieldset.elements.login == form.elements.login); // true
+      </script>
+
+      <p>though for ease of reference we use //form.name// </p>
+
+      <form id="form">
+        <input name="login">
+      </form>
+      
+      <script>
+        alert(form.elements.login == form.login); // true, the same <input>
+      
+        form.login.name = "username"; // change the name of the input
+      
+        // form.elements updated the name:
+        alert(form.elements.login); // undefined
+        alert(form.elements.username); // input
+      
+        // form allows both names: the new one and the old one
+        alert(form.username == form.login); // true
+      </script>
+
+<h3>backreferences</h3>
+
+<p>For any element, the form is available as element.form. So a form references all elements, and elements reference the form.</p>
+
+<p>for instance</p>
+<form id="form">
+    <input type="text" name="login">
+  </form>
+  
+  <script>
+    // form -> element
+    let login = form.login;
+  
+    // element -> form
+    alert(login.form); // HTMLFormElement
+  </script>
+
+<p>textboxes can be accessed with an input like this</p>
+
+<script>
+    input.value = "New value";
+    textarea.value = "New text";
+
+    input.checked = true; // for a checkbox or radio button
+</script>
+
+<h2>select and option</h2>
+
+<p>know the three importiant properties of selection</p>
+
+<p>select.options – the collection of <option> subelements,</p>
+<p>select.value – the value of the currently selected <option>,</p>
+<p>select.selectedIndex – the number of the currently selected <option>.</p>
+
+<p>here is an example of them</p>
+
+<select id="select">
+    <option value="apple">Apple</option>
+    <option value="pear">Pear</option>
+    <option value="banana">Banana</option>
+  </select>
+  
+  <script>
+    // all three lines do the same thing
+    select.options[2].selected = true;
+    select.selectedIndex = 2;
+    select.value = 'banana';
+    // please note: options start from zero, so index 2 means the 3rd option.
+  </script>
+
+<p>though select can allow mutliple options at once if it has the <br>
+multiple atribute, For multiple selected values, use the first way of <br>
+setting values: add/remove the selected property from <option> subelements.</p>
+
+<p>example:</p>
+    <select id="select" multiple>
+        <option value="blues" selected>Blues</option>
+        <option value="rock" selected>Rock</option>
+        <option value="classic">Classic</option>
+      </select>
+      
+      <script>
+        // get all selected values from multi-select
+        let selected = Array.from(select.options)
+          .filter(option => option.selected)
+          .map(option => option.value);
+      
+        alert(selected); // blues,rock
+      </script>
+</body>
+</html>
