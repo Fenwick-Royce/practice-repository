@@ -1,6 +1,7 @@
-function calculator(item, quantity) {    
-    let price = item*quantity;
-    return price;
+function calculateAmount(val) {
+    let tot_price = val*100;
+    let divobj = document.getElementById('tot_price');
+    divobj.value = tot_price;
 }
 
-console.log(calculator(4, 3));
+console.log('tot_price');

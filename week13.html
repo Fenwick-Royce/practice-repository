@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <p>modules are files in JS, which can be accessable from the outside of the files <br>
+        which can be exported or imported</p>
+    </section>
+    <script type="module">
+          import {sayHi} from './say.js';
+
+        document.body.innerHTML = sayHi('John');
+    </script>
+<section>
+    <p>however, they can only be accessed in the same field of a sorts</p>
+</section>
+<script>
+    
+</script>
+</body>
+</html>

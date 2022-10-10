@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <section class="card-body">
+        <div class="container mt-5">
+            <form name="frm-pin" method="post" action="pin-index">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="hidden" name="mode" value="PinRequest">
+                        <label class="w3-text-green" for="" selected></label>
+                            <select name="tot_pin_requested" onchange="calculateAmount(this.value)" required>
+                            <option value="" disabled selected>please choose how many days you would like this mercenary <br>
+                                to be in your service.
+                            </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            </select>
+                        <label for=""><p>total cost</p></label>
+                        <input class="w3-input w3-border" name="tot_price" id="tot_price" type="text" readonly>
+                        <script src="./javascript/calculatorscript.js"></script>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
